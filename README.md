@@ -1,4 +1,9 @@
 # restaurant_order
+```
+과목명 :소프트웨어공학_캡스톤디자인 
+기간 2주
+개발자 : Won Chi Hyeon.
+```
 
 ## 개발할 증분 (메뉴관리 패키지)
 ![image](https://user-images.githubusercontent.com/58906858/235354473-43ae6cef-1fed-4c0c-9270-31266ecaf453.png)
