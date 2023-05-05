@@ -34,3 +34,10 @@ sqlite 데이터베이스에서 바로 삭제시킬 삭제버튼 UI & 로그아�
 textController로 id, pw에 연결해서 V&V를 구현해보았다.
 차후에 UI 수정이 들어갈 예정.. 오른쪽으로 
 ```
+
+## 신규 메뉴 등록 화면
+![image](https://user-images.githubusercontent.com/58906858/236514913-12ce6dd5-11d8-4b45-91ef-262dd95db98b.png)
+```
+등록할 메뉴의 이름을 TextField에 입력하고 최하단의 Floating Button을 클릭하면 시스템 메인화면으로 이동하는 기능과
+Sqflite데이터베이스에 메뉴의 이름(name)을 등록한다(SQL 쿼리문으로).
+```
