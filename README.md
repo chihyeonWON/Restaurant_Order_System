@@ -41,3 +41,12 @@ textController로 id, pw에 연결해서 V&V를 구현해보았다.
 등록할 메뉴의 이름을 TextField에 입력하고 최하단의 Floating Button을 클릭하면 시스템 메인화면으로 이동하는 기능과
 Sqflite데이터베이스에 메뉴의 이름(name)을 등록한다(SQL 쿼리문으로).
 ```
+
+## 시스템 메인 화면
+![image](https://user-images.githubusercontent.com/58906858/236515336-3277fb3c-5bf6-4d26-9a9f-d181b2b29830.png)
+```
+신규 메뉴 등록 화면에서 피자를 입력하고 버튼을 클릭한 후의 시스템 메인 화면이다.
+등록한 메뉴가 하단 리스트에 추가되어 보여지게 된다.
+
+역시 향후에 UI를 변경할 예정..
+```
