@@ -16,16 +16,19 @@ class _menuAddState extends State<menuAdd> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(
-        child: TextField(
-            controller: textController,
-            decoration: InputDecoration(
-              labelText:'등록할 메뉴의 이름을 입력해주세요',
-              labelStyle:TextStyle(fontSize:25,),
-            ),
-          ),
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: Text('신규 메뉴 등록 페이지'),
       ),
+      backgroundColor: Colors.white,
+      body: TextField(
+        style:TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          controller: textController,
+          decoration: InputDecoration(
+            labelText:'등록할 메뉴의 이름을 입력해주세요',
+            labelStyle:TextStyle(fontSize:25,),
+          ),
+        ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           selectedId != null
