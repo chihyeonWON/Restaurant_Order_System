@@ -28,7 +28,9 @@ sqlite 데이터베이스에서 바로 삭제시킬 삭제버튼 UI & 로그아�
 
 ## 시스템 관리자 로그인 화면
 ![image](https://user-images.githubusercontent.com/58906858/236513319-52c6fabe-a5aa-4c0a-b068-f61b5f3eba9f.png)
+![image](https://user-images.githubusercontent.com/58906858/236514490-c02472b9-33e3-4048-b41f-adc8946cd93e.png)
+
 ```
 textController로 id, pw에 연결해서 V&V를 구현해보았다.
-차후에 UI 수정이 들어갈 예정..
+차후에 UI 수정이 들어갈 예정.. 오른쪽으로 
 ```
