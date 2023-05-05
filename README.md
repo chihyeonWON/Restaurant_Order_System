@@ -8,6 +8,10 @@
 개발 언어 : dart
 ```
 
+## 앱 아이콘 설정
+![image](https://user-images.githubusercontent.com/58906858/236525440-d42bd131-65ed-40e9-bef9-b163d8b721c5.png)
+
+
 ## 개발할 증분 (메뉴관리 패키지)
 ![image](https://user-images.githubusercontent.com/58906858/236522967-eb19aafb-8ff2-43a0-9df2-935a3e108955.png)
 
