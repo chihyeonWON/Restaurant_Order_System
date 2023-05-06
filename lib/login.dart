@@ -37,7 +37,7 @@ class _LoginState extends State<Login> {
               children: <Widget>[
                 Padding(
                   padding: const EdgeInsets.only(right:230.0, top: 30, bottom:30,),
-                  child: Text('Login', style: TextStyle(fontSize:50, fontWeight:FontWeight.bold)),
+                  child: Text('Login', style: TextStyle(fontSize:40,fontWeight:FontWeight.bold)),
                 ),
                 TextFormField(
                   decoration: InputDecoration(
