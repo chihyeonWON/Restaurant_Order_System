@@ -11,12 +11,14 @@ class MainScreen extends StatefulWidget {
   _MainScreenState createState() => _MainScreenState();
 }
 
+
 class _MainScreenState extends State<MainScreen> {
   int? selectedId;
   final textController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -93,7 +95,8 @@ class _MainScreenState extends State<MainScreen> {
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => menuAdd()));
+                      MaterialPageRoute(builder: (context) => menuAdd())).then((value) {setState(() {
+                      });});
                 },
                 child: Text('메뉴 등록하기',
                     style: TextStyle(
@@ -124,6 +127,7 @@ class _MainScreenState extends State<MainScreen> {
                 )
                     : ListView(
                   shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
                   children: snapshot.data!.map((grocery) {
                     return Center(
                       child: Card(

@@ -38,8 +38,7 @@ class _menuAddState extends State<menuAdd> {
               : await DatabaseHelper.instance.add(
             Grocery(name: textController.text),
           );
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => MainScreen()));
+          Navigator.pop(context, true);
           setState(() {
             textController.clear();
             selectedId = null;
