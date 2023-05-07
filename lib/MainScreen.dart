@@ -3,7 +3,7 @@ import 'package:restaurant_order/login.dart';
 import 'package:restaurant_order/menuAdd.dart';
 
 import 'db.dart';
-import 'grocery.dart';
+import 'module.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
@@ -109,6 +109,9 @@ class _MainScreenState extends State<MainScreen> {
                     fontSize: 22.0,
                     fontWeight: FontWeight.bold,
                   )),
+            ),
+            SizedBox(
+              height:40,
             ),
             FutureBuilder<List<Grocery>>(
               future: DatabaseHelper.instance.getGroceries(),
