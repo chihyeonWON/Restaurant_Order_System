@@ -28,13 +28,12 @@ class _MainScreenState extends State<MainScreen> {
         elevation: 0,
         // 음영 0
         title: InkWell(
-            onTap: () {}, // 주소 설정 페이지로 이동
+            onTap: () {},
             child: Text('5조 레스토랑 시스템메인 화면',
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 18.0,
                     fontWeight: FontWeight.bold))),
-        // 주소
         actions: [
           // 오른쪽 아이콘 위젯들
           Row(
