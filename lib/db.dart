@@ -5,6 +5,7 @@ import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 
+// Sqflite 데이터베이스 연동, sql 주입
 class DatabaseHelper {
   DatabaseHelper._privateConstructor();
 
@@ -38,22 +39,22 @@ class DatabaseHelper {
     return await db.delete('groceries', where: 'id = ?', whereArgs: [id]);
   }
 
-  Future<int> update(Module grocery) async {
+  Future<int> update(Menu grocery) async {
     Database db = await instance.database;
     return await db.update('groceries', grocery.toMap(),
         where: 'id = ?', whereArgs: [grocery.id]);
   }
 
-  Future<List<Module>> getGroceries() async {
+  Future<List<Menu>> getGroceries() async {
     Database db = await instance.database;
     var groceries = await db.query('groceries', orderBy: 'name');
-    List<Module> groceryList = groceries.isNotEmpty
-        ? groceries.map((c) => Module.fromMap(c)).toList()
+    List<Menu> groceryList = groceries.isNotEmpty
+        ? groceries.map((c) => Menu.fromMap(c)).toList()
         : [];
     return groceryList;
   }
 
-  Future<int> add(Module grocery) async {
+  Future<int> add(Menu grocery) async {
     Database db = await instance.database;
     return await db.insert('groceries', grocery.toMap());
   }

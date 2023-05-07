@@ -5,6 +5,7 @@ import 'db.dart';
 import 'module.dart';
 import 'package:flutter/material.dart';
 
+// 메뉴 등록하기 클래스
 class menuAdd extends StatefulWidget {
   @override
   _menuAddState createState() => _menuAddState();
@@ -33,10 +34,10 @@ class _menuAddState extends State<menuAdd> {
         onPressed: () async {
           selectedId != null
               ? await DatabaseHelper.instance.update(
-            Module(id: selectedId, name: textController.text),
+            Menu(id: selectedId, name: textController.text),
           )
               : await DatabaseHelper.instance.add(
-            Module(name: textController.text),
+            Menu(name: textController.text),
           );
           Navigator.pop(context, true);
           setState(() {

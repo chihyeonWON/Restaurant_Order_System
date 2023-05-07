@@ -11,7 +11,7 @@ class MainScreen extends StatefulWidget {
   _MainScreenState createState() => _MainScreenState();
 }
 
-
+// 로그인 전 시스템 메인 화면
 class _MainScreenState extends State<MainScreen> {
   int? selectedId;
   final textController = TextEditingController();
@@ -73,10 +73,10 @@ class _MainScreenState extends State<MainScreen> {
             SizedBox(
               height:40,
             ),
-            FutureBuilder<List<Module>>(
+            FutureBuilder<List<Menu>>(
               future: DatabaseHelper.instance.getGroceries(),
               builder: (BuildContext context,
-                  AsyncSnapshot<List<Module>> snapshot) {
+                  AsyncSnapshot<List<Menu>> snapshot) {
                 if (!snapshot.hasData) {
                   return Center(
                     child: Text('Loading'),

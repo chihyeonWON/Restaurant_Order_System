@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Module {
+// 메뉴 클래스
+class Menu {
   final int? id;
   final String name;
 
-  Module({this.id, required this.name});
+  Menu({this.id, required this.name});
 
-  factory Module.fromMap(Map<String, dynamic> json) => new Module(
+  factory Menu.fromMap(Map<String, dynamic> json) => new Menu(
     id: json['id'],
     name: json['name'],
   );

@@ -3,7 +3,7 @@ import 'package:restaurant_order/ManagementScreen.dart';
 import 'package:restaurant_order/main.dart';
 import 'package:restaurant_order/MainScreen.dart';
 
-// 첫 번째 페이지
+// 관리자 로그인 화면
 class Login extends StatefulWidget {
   @override
   _LoginState createState() => _LoginState();

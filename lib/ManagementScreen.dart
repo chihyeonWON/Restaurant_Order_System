@@ -6,6 +6,7 @@ import 'db.dart';
 import 'module.dart';
 import 'package:flutter/material.dart';
 
+// 관리자 로그인 후 시스템 메인 화면
 class ManagementScreen extends StatefulWidget {
   @override
   _ManagementScreenState createState() => _ManagementScreenState();
@@ -28,13 +29,12 @@ class _ManagementScreenState extends State<ManagementScreen> {
         elevation: 0,
         // 음영 0
         title: InkWell(
-            onTap: () {}, // 주소 설정 페이지로 이동
+            onTap: () {},
             child: Text('5조 레스토랑 시스템메인 화면',
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 18.0,
                     fontWeight: FontWeight.bold))),
-        // 주소
         actions: [
           // 오른쪽 아이콘 위젯들
           Row(
@@ -81,7 +81,7 @@ class _ManagementScreenState extends State<ManagementScreen> {
                   )),
               onPressed: () async {
                 await DatabaseHelper.instance.update(
-                  Module(id: selectedId, name: textController.text),
+                  Menu(id: selectedId, name: textController.text),
                 );
                 setState(() {
                   textController.clear();
@@ -113,10 +113,10 @@ class _ManagementScreenState extends State<ManagementScreen> {
             SizedBox(
               height:40,
             ),
-            FutureBuilder<List<Module>>(
+            FutureBuilder<List<Menu>>(
               future: DatabaseHelper.instance.getGroceries(),
               builder: (BuildContext context,
-                  AsyncSnapshot<List<Module>> snapshot) {
+                  AsyncSnapshot<List<Menu>> snapshot) {
                 if (!snapshot.hasData) {
                   return Center(
                     child: Text('Loading'),
