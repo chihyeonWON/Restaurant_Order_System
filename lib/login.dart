@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant_order/ManagementScreen.dart';
 import 'package:restaurant_order/main.dart';
 import 'package:restaurant_order/MainScreen.dart';
 
@@ -11,13 +12,13 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   final _formKey = GlobalKey<FormState>(); // 폼의 상태를 얻기 위한 키
 
-  final _heightController = TextEditingController(); // 키 컨트롤러 객체
-  final _weightContoller = TextEditingController(); // 몸무게 컨트롤러 객체
+  final _idController = TextEditingController(); // 아이디 컨트롤러 객체
+  final _passwordController = TextEditingController(); // 패스워드 컨트롤러 객체
 
   @override
   void dispose() {
-    _heightController.dispose(); // 다 사용한 컨트롤러 해제
-    _weightContoller.dispose(); // 다 사용한 컨트롤러 해제
+    _idController.dispose(); // 다 사용한 컨트롤러 해제
+    _passwordController.dispose(); // 다 사용한 컨트롤러 해제
     super.dispose();
   }
 
@@ -36,8 +37,14 @@ class _LoginState extends State<Login> {
             child: Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.only(right:230.0, top: 30, bottom:30,),
-                  child: Text('Login', style: TextStyle(fontSize:40,fontWeight:FontWeight.bold)),
+                  padding: const EdgeInsets.only(
+                    right: 230.0,
+                    top: 30,
+                    bottom: 30,
+                  ),
+                  child: Text('Login',
+                      style:
+                          TextStyle(fontSize: 40, fontWeight: FontWeight.bold)),
                 ),
                 TextFormField(
                   decoration: InputDecoration(
@@ -45,7 +52,7 @@ class _LoginState extends State<Login> {
                     border: OutlineInputBorder(),
                     hintText: '시스템 관리자 ID를 입력하세요', // placeholder 아이디
                   ),
-                  controller: _heightController, // 키 컨트롤러 연결
+                  controller: _idController, // 키 컨트롤러 연결
                   validator: (value) {
                     if (value!.trim().isEmpty) {
                       return '아이디를 입력해 주세요';
@@ -62,7 +69,7 @@ class _LoginState extends State<Login> {
                     border: OutlineInputBorder(),
                     hintText: '시스템 관리자 비밀번호를 입력하세요', // placeholder 비밀번호
                   ),
-                  controller: _weightContoller,
+                  controller: _passwordController,
                   keyboardType: TextInputType.number, // 숫자만 입력할 수 있음
                   validator: (value) {
                     if (value!.trim().isEmpty) {
@@ -77,17 +84,20 @@ class _LoginState extends State<Login> {
                   alignment: Alignment.centerRight, // 오른쪽 가운데에 위치
                   child: ElevatedButton(
                     onPressed: () {
-                      if (_formKey.currentState!.validate()) {
-                        // 키와 몸무게 값이 검증되었다면 화면 이동
+                      if (_formKey.currentState!.validate() &&
+                          _idController.text == "원치현" &&
+                          _passwordController.text == "1234") {
+                        // 아이디와 비밀번호 값이 검증되었다면 화면 이동
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => MainScreen()
-                          ),
+                          MaterialPageRoute(builder: (context) => ManagementScreen()),
                         );
                       }
                     },
-                    child: Text('로그인', style:TextStyle(fontSize:30,)),
+                    child: Text('로그인',
+                        style: TextStyle(
+                          fontSize: 30,
+                        )),
                   ),
                 )
               ],
@@ -98,4 +108,3 @@ class _LoginState extends State<Login> {
     );
   }
 }
-
