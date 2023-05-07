@@ -33,10 +33,10 @@ class _menuAddState extends State<menuAdd> {
         onPressed: () async {
           selectedId != null
               ? await DatabaseHelper.instance.update(
-            Grocery(id: selectedId, name: textController.text),
+            Module(id: selectedId, name: textController.text),
           )
               : await DatabaseHelper.instance.add(
-            Grocery(name: textController.text),
+            Module(name: textController.text),
           );
           Navigator.pop(context, true);
           setState(() {
