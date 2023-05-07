@@ -38,22 +38,22 @@ class DatabaseHelper {
     return await db.delete('groceries', where: 'id = ?', whereArgs: [id]);
   }
 
-  Future<int> update(Grocery grocery) async {
+  Future<int> update(Module grocery) async {
     Database db = await instance.database;
     return await db.update('groceries', grocery.toMap(),
         where: 'id = ?', whereArgs: [grocery.id]);
   }
 
-  Future<List<Grocery>> getGroceries() async {
+  Future<List<Module>> getGroceries() async {
     Database db = await instance.database;
     var groceries = await db.query('groceries', orderBy: 'name');
-    List<Grocery> groceryList = groceries.isNotEmpty
-        ? groceries.map((c) => Grocery.fromMap(c)).toList()
+    List<Module> groceryList = groceries.isNotEmpty
+        ? groceries.map((c) => Module.fromMap(c)).toList()
         : [];
     return groceryList;
   }
 
-  Future<int> add(Grocery grocery) async {
+  Future<int> add(Module grocery) async {
     Database db = await instance.database;
     return await db.insert('groceries', grocery.toMap());
   }
