@@ -62,46 +62,6 @@ class _MainScreenState extends State<MainScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
-              height: 50,
-            ),
-            TextField(
-              style:TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              controller: textController,
-              decoration: InputDecoration(
-                  labelText: '수정할 메뉴 이름이 여기에 표시됩니다.',
-                  labelStyle: TextStyle(
-                    fontSize: 25,
-                  )),
-            ),
-            ElevatedButton(
-              child: Text('메뉴 수정하기',
-                  style: TextStyle(
-                    fontSize: 25,
-                  )),
-              onPressed: () async {
-                await DatabaseHelper.instance.update(
-                  Grocery(id: selectedId, name: textController.text),
-                );
-                setState(() {
-                  textController.clear();
-                  selectedId = null;
-                });
-              },
-            ),
-            SizedBox(
-              height: 50,
-            ),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => menuAdd())).then((value) {setState(() {
-                      });});
-                },
-                child: Text('메뉴 등록하기',
-                    style: TextStyle(
-                      fontSize: 20,
-                    ))),
             Padding(
               padding: const EdgeInsets.only(left: 20.0),
               child: Text('판매 중인 메뉴 목록',
@@ -113,10 +73,10 @@ class _MainScreenState extends State<MainScreen> {
             SizedBox(
               height:40,
             ),
-            FutureBuilder<List<Grocery>>(
+            FutureBuilder<List<Module>>(
               future: DatabaseHelper.instance.getGroceries(),
               builder: (BuildContext context,
-                  AsyncSnapshot<List<Grocery>> snapshot) {
+                  AsyncSnapshot<List<Module>> snapshot) {
                 if (!snapshot.hasData) {
                   return Center(
                     child: Text('Loading'),
@@ -131,18 +91,18 @@ class _MainScreenState extends State<MainScreen> {
                     : ListView(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
-                  children: snapshot.data!.map((grocery) {
+                  children: snapshot.data!.map((module) {
                     return Center(
                       child: Card(
-                        color: selectedId == grocery.id
+                        color: selectedId == module.id
                             ? Colors.white70
                             : Colors.white,
                         child: ListTile(
                           onTap: () {
                             setState(() {
                               if (selectedId == null) {
-                                textController.text = grocery.name;
-                                selectedId = grocery.id;
+                                textController.text = module.name;
+                                selectedId = module.id;
                               } else {
                                 textController.text = '';
                                 selectedId = null;
@@ -162,13 +122,13 @@ class _MainScreenState extends State<MainScreen> {
                           mainAxisAlignment:
                           MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(grocery.name, style:TextStyle(fontSize:20, fontWeight:FontWeight.bold)),
+                            Text(module.name, style:TextStyle(fontSize:20, fontWeight:FontWeight.bold)),
                             IconButton(
                               icon: Icon(Icons.delete, size:30),
                               onPressed: () {
                                 setState(() {
                                   DatabaseHelper.instance
-                                      .remove(grocery.id!);
+                                      .remove(module.id!);
                                 });
                               },
                             ),
