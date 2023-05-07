@@ -5,6 +5,7 @@ void main() {
   runApp(const MyApp());
 }
 
+// 처음 시작하는 화면
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
