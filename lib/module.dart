@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 // 메뉴 클래스
 class Menu {
-  final int? id;
-  final String name;
+  final int? id; // 식별자
+  final String name; // 메뉴 이름
 
   Menu({this.id, required this.name});
 
