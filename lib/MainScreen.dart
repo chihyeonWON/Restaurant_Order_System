@@ -19,9 +19,16 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
 
+
+    void initState() {
+      setState(() {
+      });
+    }
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.black,
         toolbarHeight: 70,
         // appBar 높이 70
@@ -44,7 +51,7 @@ class _MainScreenState extends State<MainScreen> {
                   padding: EdgeInsets.only(
                     right: 20,
                   ),
-                  child: IconButton(
+                  child: IconButton( // 시스템 관리자 로그인 버튼
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => Login()));
@@ -122,7 +129,7 @@ class _MainScreenState extends State<MainScreen> {
                           MainAxisAlignment.spaceBetween,
                           children: [
                             Text(module.name, style:TextStyle(fontSize:20, fontWeight:FontWeight.bold)),
-                            IconButton(
+                            IconButton( // 메뉴 삭제 아이콘
                               icon: Icon(Icons.delete, size:30),
                               onPressed: () {
                                 setState(() {
