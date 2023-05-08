@@ -39,7 +39,7 @@ class _MainScreenState extends State<MainScreen> {
             child: Text('5조 레스토랑 시스템메인 화면',
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: 18.0,
+                    fontSize: 22.0,
                     fontWeight: FontWeight.bold))),
         actions: [
           // 오른쪽 아이콘 위젯들
@@ -68,11 +68,14 @@ class _MainScreenState extends State<MainScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            SizedBox(
+              height:20,
+            ),
             Padding(
               padding: const EdgeInsets.only(left: 20.0),
               child: Text('판매 중인 메뉴 목록',
                   style: TextStyle(
-                    fontSize: 22.0,
+                    fontSize: 30.0,
                     fontWeight: FontWeight.bold,
                   )),
             ),
@@ -129,15 +132,7 @@ class _MainScreenState extends State<MainScreen> {
                           MainAxisAlignment.spaceBetween,
                           children: [
                             Text(module.name, style:TextStyle(fontSize:20, fontWeight:FontWeight.bold)),
-                            IconButton( // 메뉴 삭제 아이콘
-                              icon: Icon(Icons.delete, size:30),
-                              onPressed: () {
-                                setState(() {
-                                  DatabaseHelper.instance
-                                      .remove(module.id!);
-                                });
-                              },
-                            ),
+
                           ],
                         ),
                       ),
