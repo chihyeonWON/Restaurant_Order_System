@@ -1,4 +1,5 @@
 import 'package:path/path.dart';
+import 'package:restaurant_order/MainScreen.dart';
 import 'package:restaurant_order/login.dart';
 import 'package:restaurant_order/menuAdd.dart';
 
@@ -23,6 +24,7 @@ class _ManagementScreenState extends State<ManagementScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.black,
         toolbarHeight: 70,
         // appBar 높이 70
@@ -30,40 +32,24 @@ class _ManagementScreenState extends State<ManagementScreen> {
         // 음영 0
         title: InkWell(
             onTap: () {},
-            child: Text('5조 레스토랑 시스템메인 화면',
+            child: Text('5조 레스토랑 시스템 관리자 화면',
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: 18.0,
+                    fontSize: 20.0,
                     fontWeight: FontWeight.bold))),
-        actions: [
-          // 오른쪽 아이콘 위젯들
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 10.0),
-                child: Padding(
-                  padding: EdgeInsets.only(
-                    right: 20,
-                  ),
-                  child: IconButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Login()));
-                    },
-                    icon: Icon(Icons.account_circle_rounded,
-                        color: Colors.white, size: 30),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ],
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             SizedBox(
               height: 50,
+            ),
+            ElevatedButton( // 로그아웃 버튼
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MainScreen()));
+              },
+              child: Text('로그아웃', style: TextStyle(fontSize: 30, fontWeight:FontWeight.bold)),
             ),
             TextField(
               style:TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -78,6 +64,7 @@ class _ManagementScreenState extends State<ManagementScreen> {
               child: Text('메뉴 수정하기',
                   style: TextStyle(
                     fontSize: 25,
+                    fontWeight:FontWeight.bold,
                   )),
               onPressed: () async {
                 await DatabaseHelper.instance.update(
@@ -88,6 +75,9 @@ class _ManagementScreenState extends State<ManagementScreen> {
                   selectedId = null;
                 });
               },
+            ),
+            SizedBox(
+              height:30,
             ),
             SizedBox(
               height: 50,
@@ -101,12 +91,16 @@ class _ManagementScreenState extends State<ManagementScreen> {
                 child: Text('메뉴 등록하기',
                     style: TextStyle(
                       fontSize: 20,
+                      fontWeight:FontWeight.bold,
                     ))),
+            SizedBox(
+              height:20,
+            ),
             Padding(
               padding: const EdgeInsets.only(left: 20.0),
               child: Text('판매 중인 메뉴 목록',
                   style: TextStyle(
-                    fontSize: 22.0,
+                    fontSize: 25.0,
                     fontWeight: FontWeight.bold,
                   )),
             ),
@@ -131,18 +125,18 @@ class _ManagementScreenState extends State<ManagementScreen> {
                     : ListView(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
-                  children: snapshot.data!.map((grocery) {
+                  children: snapshot.data!.map((menu) {
                     return Center(
                       child: Card(
-                        color: selectedId == grocery.id
+                        color: selectedId == menu.id
                             ? Colors.white70
                             : Colors.white,
                         child: ListTile(
                           onTap: () {
                             setState(() {
                               if (selectedId == null) {
-                                textController.text = grocery.name;
-                                selectedId = grocery.id;
+                                textController.text = menu.name;
+                                selectedId = menu.id;
                               } else {
                                 textController.text = '';
                                 selectedId = null;
@@ -162,13 +156,13 @@ class _ManagementScreenState extends State<ManagementScreen> {
                           mainAxisAlignment:
                           MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(grocery.name, style:TextStyle(fontSize:20, fontWeight:FontWeight.bold)),
+                            Text(menu.name, style:TextStyle(fontSize:20, fontWeight:FontWeight.bold)),
                             IconButton(
                               icon: Icon(Icons.delete, size:30),
                               onPressed: () {
                                 setState(() {
                                   DatabaseHelper.instance
-                                      .remove(grocery.id!);
+                                      .remove(menu.id!);
                                 });
                               },
                             ),
