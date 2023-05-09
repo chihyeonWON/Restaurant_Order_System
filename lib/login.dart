@@ -27,7 +27,7 @@ class _LoginState extends State<Login> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text('시스템 관리자 로그인 페이지'),
+        title: Text('시스템 관리자 로그인 페이지', style:TextStyle(fontSize:23, fontWeight:FontWeight.bold)),
       ),
       body: SingleChildScrollView(
         child: Container(
