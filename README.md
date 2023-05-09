@@ -81,3 +81,9 @@ Sqflite데이터베이스에 메뉴의 이름(name)을 등록한다(SQL 쿼리�
 사용자 메뉴 화면에서 선택한 메뉴의 이름을 생성자로 넘겨받은 menuPayment 클래스에서 가격, 메뉴 설명, 결제 창으로 이동하는
 버튼을 추가하였습니다.
 ```
+
+## 결제 방법 선택 화면 (paymentMethod.dart)
+![image](https://github.com/chihyeonWON/Restaurant_Order_System/assets/58906858/9f010cf8-a891-4421-915e-c6fc381a54f7)
+```
+결제를 카드로 할 것인지, 직접 만나서 결제할 것인지를 선택하는 화면입니다.
+```
