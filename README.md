@@ -87,3 +87,12 @@ Sqflite데이터베이스에 메뉴의 이름(name)을 등록한다(SQL 쿼리�
 ```
 결제를 카드로 할 것인지, 직접 만나서 결제할 것인지를 선택하는 화면입니다.
 ```
+
+## 결제 방법을 PG 일반 (PG 대행사) (default_payment.dart)
+![image](https://github.com/chihyeonWON/Restaurant_Order_System/assets/58906858/ee05afea-9350-4b83-a45a-30a5f4401603)
+![image](https://github.com/chihyeonWON/Restaurant_Order_System/assets/58906858/47ed7d82-a8f8-4cfe-8aaf-f59d4e435e7c)
+![image](https://github.com/chihyeonWON/Restaurant_Order_System/assets/58906858/a795b500-cb14-48c2-912f-c66dc03a052d)
+```
+pg 일반으로 선택했을 때의 결제 창입니다. 약관에 모두 동의하면 카드사를 선택할 수 있는 화면으로 전환됩니다.
+최종적으로 주문하는 메뉴를 확인하고 확인 버튼을 누르면 주문이 성공하였다는 페이지로 넘어가게 됩니다.
+```
