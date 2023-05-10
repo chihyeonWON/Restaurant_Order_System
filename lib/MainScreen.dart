@@ -19,13 +19,6 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-
-
-    void initState() {
-      setState(() {
-      });
-    }
-
     return GestureDetector(
       onTap: () {
         FocusManager.instance.primaryFocus?.unfocus(); // 키보드 닫기 이벤트
@@ -120,13 +113,13 @@ class _MainScreenState extends State<MainScreen> {
                           child: ListTile(
                             onTap: () {
                               Navigator.push(context,
-                                  MaterialPageRoute(builder: (context) => menuPayment()));
+                                  MaterialPageRoute(builder: (context) => menuPayment(name: textController.text)));
                               setState(() {
                                 if (selectedId == null) {
                                   textController.text = module.name;
                                   selectedId = module.id;
                                 } else {
-                                  textController.text = '';
+                                  textController.text = module.name b;
                                   selectedId = null;
                                 }
                               });
