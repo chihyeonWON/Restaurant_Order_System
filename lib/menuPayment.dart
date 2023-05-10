@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_order/paymentMethod.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:restaurant_order/default_payment.dart';
 
 class menuPayment extends StatefulWidget {
   menuPayment({Key? key, required this.name}) : super(key: key);
@@ -86,13 +88,10 @@ class _menuPaymentState extends State<menuPayment> {
                       ),
                     ),
                     ElevatedButton(
-                      onPressed: () { // 결제창으로 이동
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => paymentMethod(name: widget.name)));
-                      },
+                      onPressed: () => Get.to(DefaultPayment(name:widget.name)),
                       child: Padding(
                         padding: const EdgeInsets.only(top:10.0, bottom:10.0, right:15, left:15,),
-                        child: Text('21,000원 담기', style:TextStyle(fontSize:30,)),
+                        child: Text('21,000원 결제', style:TextStyle(fontSize:30,)),
                       ),
                     )
                   ]
