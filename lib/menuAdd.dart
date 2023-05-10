@@ -14,6 +14,15 @@ class menuAdd extends StatefulWidget {
 class _menuAddState extends State<menuAdd> {
   int? selectedId;
   final textController = TextEditingController();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    setState(() {
+
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
