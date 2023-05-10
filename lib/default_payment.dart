@@ -7,18 +7,43 @@ import 'package:bootpay/model/user.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-class DefaultPayment extends StatelessWidget {
+class DefaultPayment extends StatefulWidget {
   // You can ask Get to find a Controller that is being used by another page and redirect you to it.
 
-  String webApplicationId = '5b8f6a4d396fa665fdc2b5e7';
-  String androidApplicationId = '5b8f6a4d396fa665fdc2b5e8';
-  String iosApplicationId = '63030a85d01c7e001af64359';
+  DefaultPayment({Key? key, required this.name}) : super(key: key);
 
+  final String name;
+
+  @override
+  State<DefaultPayment> createState() => _DefaultPaymentState();
+}
+
+class _DefaultPaymentState extends State<DefaultPayment> {
+  String webApplicationId = '5b8f6a4d396fa665fdc2b5e7';
+
+  String androidApplicationId = '5b8f6a4d396fa665fdc2b5e8';
+
+  String iosApplicationId = '63030a85d01c7e001af64359';
 
   @override
   Widget build(context) {
     // Access the updated count variable
     return Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+          toolbarHeight: 70,
+          // appBar 높이 70
+          elevation: 0,
+          // 음영 0
+          title: InkWell(
+              onTap: () {},
+              child: Text('${widget.name} 결제창',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 22.0,
+                      fontWeight: FontWeight.bold))),
+        ),
         body: SafeArea(
             child: Center(
                 child: TextButton(
