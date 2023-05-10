@@ -65,3 +65,34 @@ Sqflite데이터베이스에 메뉴의 이름(name)을 등록한다(SQL 쿼리�
 
 양념치킨을 슈프림치킨으로 변경하였다.
 ```
+
+## 관리자 로그아웃 기능
+![image](https://github.com/chihyeonWON/Restaurant_Order_System/assets/58906858/5210bc73-b089-4993-adc7-f5110c6aedae)
+![image](https://github.com/chihyeonWON/Restaurant_Order_System/assets/58906858/c2d82e93-d1de-4327-b190-4e35241f7c93)
+
+```
+시스템 관리자 페이지에서 로그아웃 버튼을 누르면 사용자 메뉴 화면으로 돌아가능 기능을 추가
+```
+
+## 결제 화면 (menuPayment.dart)
+![image](https://github.com/chihyeonWON/Restaurant_Order_System/assets/58906858/a11e764b-3ed5-4700-993c-84c7d33328e5)
+![image](https://github.com/chihyeonWON/Restaurant_Order_System/assets/58906858/01f5d649-77a5-46d2-9323-5bcb1a6a089e)
+```
+사용자 메뉴 화면에서 선택한 메뉴의 이름을 생성자로 넘겨받은 menuPayment 클래스에서 가격, 메뉴 설명, 결제 창으로 이동하는
+버튼을 추가하였습니다.
+```
+
+## 결제 방법 선택 화면 (paymentMethod.dart)
+![image](https://github.com/chihyeonWON/Restaurant_Order_System/assets/58906858/9f010cf8-a891-4421-915e-c6fc381a54f7)
+```
+결제를 카드로 할 것인지, 직접 만나서 결제할 것인지를 선택하는 화면입니다.
+```
+
+## 결제 방법을 PG 일반 (PG 대행사) (default_payment.dart)
+![image](https://github.com/chihyeonWON/Restaurant_Order_System/assets/58906858/ee05afea-9350-4b83-a45a-30a5f4401603)
+![image](https://github.com/chihyeonWON/Restaurant_Order_System/assets/58906858/47ed7d82-a8f8-4cfe-8aaf-f59d4e435e7c)
+![image](https://github.com/chihyeonWON/Restaurant_Order_System/assets/58906858/a795b500-cb14-48c2-912f-c66dc03a052d)
+```
+pg 일반으로 선택했을 때의 결제 창입니다. 약관에 모두 동의하면 카드사를 선택할 수 있는 화면으로 전환됩니다.
+최종적으로 주문하는 메뉴를 확인하고 확인 버튼을 누르면 주문이 성공하였다는 페이지로 넘어가게 됩니다.
+```
