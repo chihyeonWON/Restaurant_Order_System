@@ -119,7 +119,7 @@ class _MainScreenState extends State<MainScreen> {
                                   textController.text = module.name;
                                   selectedId = module.id;
                                 } else {
-                                  textController.text = module.name b;
+                                  textController.text = module.name;
                                   selectedId = null;
                                 }
                               });
