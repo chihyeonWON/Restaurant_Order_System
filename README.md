@@ -106,6 +106,11 @@ pg일반 결제 상품명, 가격을 수정하였습니다.
 ```
 
 ## 2차 증분 구현 및 릴리즈
+![image](https://github.com/chihyeonWON/Restaurant_Order_System/assets/58906858/089e54cf-0bcf-40fc-89fd-56e00de5f275)
+```
+메뉴 결제 방식을 선택할 수 있는 페이지 paymentMethod 클래스를 생성하였습니다.
+카드로 결제할 것인지, 토스, 카카오 외부 결제를 사용할 것인지 선택할 수 있습니다.
+```
 ![image](https://github.com/chihyeonWON/Restaurant_Order_System/assets/58906858/5f5c8993-a332-4185-868e-1e61a3408403)
 ![image](https://github.com/chihyeonWON/Restaurant_Order_System/assets/58906858/1c0e52a5-aa11-4c33-a0de-8066b6c2d58a)
 ```
