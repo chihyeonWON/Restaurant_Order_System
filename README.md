@@ -113,3 +113,6 @@ pg일반 결제 상품명, 가격을 수정하였습니다.
 onCancel (결제 취소하기), onError (결제 중 오류) 일 때는 paymentMethod 클래스로 돌아가도록 하고
 onClose, onConfirm (결제가 성공되어 다음 화면으로 갈 때는 payList 클래스로 돌아가도록 설정하였습니다.
 ```
+
+## 구글 플레이 출시 릴리즈(배포)
+![image](https://github.com/chihyeonWON/Restaurant_Order_System/assets/58906858/62da10d7-5bde-484b-881c-93b296bdbbd2)
