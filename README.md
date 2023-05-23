@@ -104,3 +104,12 @@ pg일반 결제 상품명, 가격을 수정하였습니다.
 정말로 결제되나 테스트하고자 내 농협 카드로 테스트 했는데 NICE 결제 대행으로 1000원이 결제가 되었다..?
 이게 뭘까..............
 ```
+
+## 2차 증분 구현 및 릴리즈
+![image](https://github.com/chihyeonWON/Restaurant_Order_System/assets/58906858/5f5c8993-a332-4185-868e-1e61a3408403)
+![image](https://github.com/chihyeonWON/Restaurant_Order_System/assets/58906858/1c0e52a5-aa11-4c33-a0de-8066b6c2d58a)
+```
+메뉴 결제에 성공한 후에 주문 내역을 보여주는 페이지를 추가하였습니다.
+onCancel (결제 취소하기), onError (결제 중 오류) 일 때는 paymentMethod 클래스로 돌아가도록 하고
+onClose, onConfirm (결제가 성공되어 다음 화면으로 갈 때는 payList 클래스로 돌아가도록 설정하였습니다.
+```
