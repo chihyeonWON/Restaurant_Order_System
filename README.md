@@ -130,3 +130,8 @@ onClose, onConfirm (결제가 성공되어 다음 화면으로 갈 때는 payLis
 ```
 릴리즈 배포를 위한 release용 앱 번들을 생성
 ```
+## 구글 플레이에 프로덕션 (올리기 완료)
+![image](https://github.com/chihyeonWON/Restaurant_Order_System/assets/58906858/cd834142-bd98-419e-a152-b3436113c223)
+```
+임시로 프로덕션이 올라가서 일주일 안에 게시 or 게시불가 앱 통지올 예정
+```
