@@ -119,3 +119,9 @@ onClose, onConfirm (결제가 성공되어 다음 화면으로 갈 때는 payLis
 
 ## 5조레스토랑 패키지 이름 변경
 ![image](https://github.com/chihyeonWON/Restaurant_Order_System/assets/58906858/b263f39e-0074-464c-a9f8-037b477ca3cd)
+
+## 릴리즈(데모 배포)
+![image](https://github.com/chihyeonWON/Restaurant_Order_System/assets/58906858/35458d29-b898-4c43-9c44-c8fff7680a24)
+```
+릴리즈 배포를 위한 release용 앱 번들을 생성
+```
