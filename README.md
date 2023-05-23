@@ -116,3 +116,6 @@ onClose, onConfirm (결제가 성공되어 다음 화면으로 갈 때는 payLis
 
 ## 구글 플레이 출시 릴리즈(배포)
 ![image](https://github.com/chihyeonWON/Restaurant_Order_System/assets/58906858/62da10d7-5bde-484b-881c-93b296bdbbd2)
+
+## 5조레스토랑 패키지 이름 변경
+![image](https://github.com/chihyeonWON/Restaurant_Order_System/assets/58906858/b263f39e-0074-464c-a9f8-037b477ca3cd)
